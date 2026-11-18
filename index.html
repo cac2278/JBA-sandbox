@@ -1,0 +1,487 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>JBA · Research Remix Lab</title><style>
+  :root{--ink:#241833;--deep:#321a4d;--violet:#6741a1;--lav:#eee6fa;--bg:#f7f4fb;--line:#ddd3e8;--mint:#b8f4dd;--gold:#ffe6a5}*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink)}button,a{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible{outline:3px solid #087bd8;outline-offset:3px}header{background:var(--deep);color:white;padding:16px max(22px,calc((100vw - 1220px)/2));display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{font-size:1.1rem;font-weight:900;letter-spacing:.02em}.tiny{font-size:.8rem;opacity:.8}.ghost{background:transparent;border:1px solid #bca8d7;color:white;border-radius:11px;padding:8px 12px;font-weight:800}main{max-width:1220px;margin:24px auto;padding:0 18px}.intro{text-align:center;max-width:760px;margin:45px auto 30px}.intro h1{font-size:clamp(2.2rem,5vw,4rem);margin:0 0 10px;letter-spacing:-.05em}.intro p{font-size:1.15rem;color:#62586e;line-height:1.5}.eyebrow{font-size:.8rem;letter-spacing:.13em;text-transform:uppercase;font-weight:900;color:var(--violet)}.businesses{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;max-width:1000px;margin:0 auto 60px}.business{background:white;border:2px solid var(--line);border-radius:22px;padding:25px 15px;text-align:left;min-height:155px;transition:transform .18s,border-color .18s,box-shadow .18s}.business:hover{transform:translateY(-5px) rotate(-.5deg);border-color:var(--violet);box-shadow:0 12px 25px #321a4d17}.business .emoji{font-size:2.7rem;display:block;margin-bottom:13px}.business strong{font-size:1.12rem;display:block}.business small{color:#73657d;display:block;margin-top:6px}.layout{display:grid;grid-template-columns:1fr 1fr;gap:18px}.panel{background:white;border:1px solid var(--line);border-radius:24px;padding:25px;box-shadow:0 12px 30px #321a4d09}.panel h1{font-size:1.8rem;letter-spacing:-.03em;margin:5px 0 10px}.help{color:#62586e;line-height:1.45;margin:0 0 17px}.question{background:var(--lav);border-left:5px solid var(--violet);border-radius:13px;padding:16px;margin:14px 0 20px;font-weight:850;line-height:1.45}.workspace{border:2px dashed #c9b5df;border-radius:15px;background:#fcfaff;padding:14px;min-height:92px;margin-bottom:18px}.label{font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;font-weight:900;color:#6b587b;margin-bottom:10px}.query{display:flex;flex-wrap:wrap;gap:7px;align-items:center}.chip{border:2px solid #c5b0db;background:white;border-radius:10px;padding:7px 10px;font-weight:800;display:inline-flex;gap:8px;align-items:center}.chip button{border:0;border-radius:50%;background:#f0e9f7;width:22px;height:22px;font-weight:900}.chip.op{background:#e5d8fa;border-color:#9b7cc5}.bank{margin-bottom:16px}.bank h2{font-size:1.03rem;margin:0 0 9px;display:flex;gap:8px;align-items:center}.words{display:flex;gap:8px;flex-wrap:wrap}.word{border:2px solid #d0c1df;background:white;border-radius:99px;padding:10px 13px;font-size:.94rem;font-weight:750}.word:hover{background:#f1e9fb}.word.selected{background:var(--deep);color:white;border-color:var(--deep)}.operators{display:flex;gap:8px;flex-wrap:wrap;margin:13px 0 18px}.operator{border:2px solid #7552a7;background:#f1e9fb;color:var(--deep);border-radius:12px;padding:10px 15px;font-weight:900}.primary{border:0;background:var(--deep);color:white;border-radius:14px;padding:15px 20px;font-weight:900;font-size:1.03rem}.primary:hover{background:#583084}.primary:disabled{opacity:.4;cursor:not-allowed}.secondary{border:2px solid var(--line);background:white;border-radius:13px;padding:12px 15px;font-weight:850;color:var(--deep)}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:19px}.note{border-radius:15px;background:#f0eafa;padding:15px;line-height:1.5;margin-top:16px}.pool{background:#faf7fd;min-height:310px;border-radius:19px;padding:18px;display:flex;flex-wrap:wrap;gap:9px;align-content:flex-start;justify-content:center}.result{width:54px;height:54px;display:grid;place-items:center;background:#e9dff5;border:2px solid #c7b3dc;border-radius:14px;font-size:1.65rem;animation:pop .22s both}.result:nth-child(4n){background:#def6ec}.result:nth-child(5n){background:#fff0ca}@keyframes pop{from{transform:scale(.55);opacity:0}to{transform:scale(1);opacity:1}}.count{text-align:center;font-weight:950;font-size:1.3rem;color:var(--violet);margin:14px}.steps{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:17px}.step{background:#eee9f4;color:#645774;border-radius:30px;padding:7px 11px;font-size:.8rem;font-weight:850}.step.active{background:var(--deep);color:white}.choice{display:block;width:100%;text-align:left;border:2px solid var(--line);border-radius:14px;background:white;padding:15px;margin:9px 0;font-weight:800}.choice:hover{border-color:var(--violet)}.choice.chosen{background:var(--lav);border-color:var(--violet)}.feedback{background:#e8f8f0;border-radius:13px;padding:16px;margin:13px 0;line-height:1.5}.scenario{font-size:1.35rem;line-height:1.45;font-weight:850;margin:16px 0}.hint{font-size:.86rem;color:#655875}.sourceOptions{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.sourceOptions .choice{text-align:center;min-height:98px}.footer{text-align:center;color:#756a7c;font-size:.85rem;margin:26px 0 45px}.pill{display:inline-block;background:#ffe7a5;border-radius:40px;padding:5px 11px;font-weight:900;font-size:.8rem;margin-bottom:8px}.status{font-weight:900;color:#5a3c82}.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}[hidden]{display:none!important}.identifyQuestion{font-size:clamp(1.35rem,2.5vw,1.8rem);font-weight:800;line-height:2.2;background:#f6f0ff;border-radius:18px;padding:22px;margin-bottom:18px}.concept{display:inline;border:2px dashed #9470c1;border-radius:10px;background:#fff;color:#4b267a;padding:4px 7px;font-weight:900;font-size:inherit;line-height:1.5}.concept:hover{background:#e9dafa}.concept.picked{background:#c7f4df;border:2px solid #31825e;color:#173f2f}.concept.picked:before{content:'✓ ';}@media(max-width:800px){.layout{grid-template-columns:1fr}.businesses{grid-template-columns:repeat(2,1fr)}.panel{padding:19px}}@media(max-width:500px){.businesses{grid-template-columns:1fr}.sourceOptions{grid-template-columns:1fr}.business{min-height:120px}.pool{min-height:220px}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+  .ideaBanks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:18px 0}.ideaBank{position:relative;border:2px dashed #c8bad8;border-radius:17px;padding:13px;min-height:138px;background:#f4f0f8;opacity:.75;transition:background .3s,border-color .3s,transform .3s,opacity .3s;overflow:hidden}.ideaBank.open{border:2px solid #36966a;background:#eafff2;opacity:1;animation:bankUnlock .48s ease-out}.ideaBank .bankHead{font-weight:900;font-size:1rem;line-height:1.3;min-height:38px}.ideaBank .bankIcon{font-size:1.25rem;margin-bottom:6px}.ideaBank .bankTerms{display:flex;flex-wrap:wrap;gap:5px;margin-top:9px}.ideaBank .bankTerms span{font-size:.73rem;background:#fff;border:1px solid #b3dfc4;padding:5px 7px;border-radius:999px;font-weight:700}.ideaBank .lockedMessage{font-size:.83rem;color:#766a81;margin-top:9px}.conceptFly{position:fixed;z-index:9999;pointer-events:none;background:#c7f4df;border:2px solid #31825e;color:#173f2f;border-radius:10px;padding:5px 9px;font-weight:900;box-shadow:0 10px 25px #21162a30;transition:transform .6s cubic-bezier(.2,.8,.2,1),opacity .6s}.concept.picked{transition:background .2s,transform .2s}.concept.picked:focus-visible{outline:3px solid #1267c4;outline-offset:3px}@keyframes bankUnlock{0%{transform:scale(.92);box-shadow:0 0 0 0 #4abd8260}65%{transform:scale(1.035);box-shadow:0 0 0 9px #4abd8200}100%{transform:scale(1)}}@media(max-width:600px){.ideaBanks{grid-template-columns:1fr}.ideaBank{min-height:95px}}
+  
+  /* Keep the original research question visibly connected to its word banks. */
+  .question{font-size:1.12rem;line-height:1.75}
+  .question .questionConcept{display:inline;border-radius:7px;padding:3px 6px;font-weight:950;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+  .questionConcept[data-concept="0"]{background:#d6edff;color:#124b82;box-shadow:inset 0 -3px #4a96d0}
+  .questionConcept[data-concept="1"]{background:#ffe5b6;color:#794508;box-shadow:inset 0 -3px #dc962e}
+  .questionConcept[data-concept="2"]{background:#d6f4e3;color:#155c40;box-shadow:inset 0 -3px #45a879}
+  .bankBridgeVisual{font-size:.91rem;font-weight:850;color:#4c3664;margin:3px 0 17px;display:flex;align-items:center;gap:9px}
+  .bankBridgeVisual:before{content:'↳';font-size:1.7rem;color:#6741a1}
+  .bank{position:relative;border:2px solid #e1d9e9;border-radius:18px;padding:16px 15px 16px 19px;background:#fff;margin-bottom:16px;box-shadow:0 5px 15px #321a4d08}
+  .bank:before{content:'';position:absolute;left:-2px;top:13px;bottom:13px;width:6px;border-radius:8px}
+  .bank[data-concept="0"]:before{background:#4a96d0}.bank[data-concept="1"]:before{background:#dc962e}.bank[data-concept="2"]:before{background:#45a879}
+  .bank h2{font-size:1.23rem;font-weight:950;line-height:1.3;margin:0 0 13px;display:flex;align-items:center;flex-wrap:wrap;gap:10px;color:#241833}
+  .bank .bankConceptLabel{font-size:.69rem;text-transform:uppercase;letter-spacing:.08em;font-weight:900;color:#655875;display:block;margin-bottom:6px}
+  .bank .bankHeadingText{border-radius:9px;padding:7px 11px;display:inline-block}
+  .bank[data-concept="0"] .bankHeadingText{background:#d6edff;color:#124b82}
+  .bank[data-concept="1"] .bankHeadingText{background:#ffe5b6;color:#794508}
+  .bank[data-concept="2"] .bankHeadingText{background:#d6f4e3;color:#155c40}
+  .bank .bankLink{font-size:.77rem;font-weight:850;color:#655875;margin:-4px 0 12px}
+  @media(prefers-reduced-motion:no-preference){.bank{animation:bankAppear .35s ease both}.bank:nth-child(2){animation-delay:.07s}.bank:nth-child(3){animation-delay:.14s}}
+  @keyframes bankAppear{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+  
+  .searchToolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+  .searchToolbar .label{margin:0}
+  .resetSearch{border:2px solid #6c4b91;border-radius:12px;padding:10px 14px;background:#fff;color:#4c2c70;font-size:.95rem;font-weight:900;cursor:pointer;white-space:nowrap}
+  .resetSearch:hover,.resetSearch:focus-visible{background:#4c2c70;color:#fff}
+  /* Guided Boolean builder: the next decision appears inside the search itself. */
+  .booleanPrompt{width:100%;border:3px solid #7350a5;border-radius:17px;background:#f1e7ff;padding:17px;margin-top:9px;box-shadow:0 5px 0 #d8c3f1;animation:promptIn .25s ease-out}
+  .booleanPrompt strong{display:block;font-size:1.15rem;color:#321a4d;margin-bottom:5px}
+  .booleanPrompt p{margin:3px 0 12px;font-size:.96rem;line-height:1.4}
+  .booleanChoices{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .booleanChoices button{min-height:74px;border:3px solid #6741a1;border-radius:14px;background:white;color:#321a4d;font-size:1.4rem;font-weight:950}
+  .booleanChoices button span{display:block;font-size:.82rem;font-weight:750;margin-top:3px}
+  .booleanChoices button:hover,.booleanChoices button:focus-visible{background:#321a4d;color:white}
+  .booleanNext{width:100%;background:#e7f7ef;border:2px solid #28825c;border-radius:14px;padding:13px;margin-top:8px;font-weight:850;color:#15553a}
+  .buildNextStep{display:flex;align-items:center;gap:13px;padding:16px 18px;margin:16px 0 18px;border:3px solid #27805d;border-radius:16px;background:#e9f9ef;color:#164c38}
+  /* Draw attention to the first action without animating the whole page. */
+  @keyframes startGuidePulse{0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(39,128,93,.24)}50%{transform:scale(1.018);box-shadow:0 0 0 9px rgba(39,128,93,.07)}}
+  @keyframes startArrowBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
+  @media(prefers-reduced-motion:no-preference){.buildNextStep.startGuide{animation:startGuidePulse 1.8s ease-in-out infinite}.buildNextStep.startGuide .guideArrow{animation:startArrowBounce 1.2s ease-in-out infinite}}
+  .buildNextStep.chooseOperator{background:#fff0cf;border-color:#c87c16;color:#633d0a}
+  .buildNextStep strong{display:block;font-size:1.14rem;line-height:1.25}
+  .buildNextStep p{margin:5px 0 0;font-size:.95rem;line-height:1.45}
+  .buildStepNumber{display:grid;place-items:center;flex:0 0 43px;height:43px;border-radius:50%;background:#1d6e4d;color:#fff;font-size:1.5rem;font-weight:950}
+  .chooseOperator .buildStepNumber{background:#a75e06}
+  .guideArrow{font-size:2rem;font-weight:950;margin-left:auto}
+  #builder .workspace{border:3px solid #7350a5;border-radius:18px;padding:17px;background:#faf6ff}
+  .word:disabled{opacity:.48;cursor:not-allowed;background:#f3f0f5;border-color:#ded8e4}
+  .operator:disabled{opacity:.4;cursor:not-allowed}
+  @keyframes promptIn{from{transform:translateY(-7px);opacity:0}to{transform:translateY(0);opacity:1}}
+  @media(max-width:500px){.booleanChoices{grid-template-columns:1fr}}
+  .identifying #identifyBankDock #unlockSearch{display:block;width:100%;margin-top:16px;font-size:1.12rem;padding:16px}.identifying #identifyBankDock #unlockSearch:disabled{opacity:.45;cursor:not-allowed}.identifying #identifyBankDock .ideaBanks{grid-template-columns:1fr;margin:10px 0;gap:12px}.identifying #identifyBankDock .ideaBank{min-height:95px;padding:15px 17px}.identifying #identifyBankDock .bankHead{font-size:1.16rem;min-height:0}.identifying #identifyBankDock .bankTerms span{font-size:.83rem}.identifying #pool,.identifying #count,.identifying #note{display:none!important}.identifying #rightTitle{font-size:1.5rem}.ideaBank.spotlight{box-shadow:0 0 0 5px #ffd97a,0 8px 26px #6741a133}@media(max-width:800px){.identifying .layout>.panel:nth-child(2){display:none}.identifying #identify .ideaBank{scroll-margin-top:20px}}
+  /* Prominent instruction only on the key-ideas step. */
+  .identifying #stageHelp{font-size:clamp(1.2rem,2.1vw,1.48rem);font-weight:850;line-height:1.45;color:#321a4d;background:#f0e7ff;border-left:6px solid #6741a1;border-radius:12px;padding:16px 19px;margin:14px 0 22px;box-shadow:0 3px 0 #e0d1f4}
+  /* A visible directional cue from the instruction to the clickable research question. */
+  .identifying #stageHelp{position:relative;margin-bottom:48px}
+  .identifying #stageHelp::after{content:'↓';position:absolute;left:50%;bottom:-43px;transform:translateX(-50%);display:grid;place-items:center;width:43px;height:43px;border-radius:50%;background:#6741a1;color:#fff;font-size:2rem;font-weight:950;line-height:1;box-shadow:0 4px 0 #d7c5ed;pointer-events:none;animation:pointToQuestion 1.5s ease-in-out infinite}
+  .identifying #identifyQuestion{border:3px solid #aa8cce;box-shadow:0 0 0 4px #f1e8fb}
+  @keyframes pointToQuestion{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,5px)}}
+  @media(prefers-reduced-motion:reduce){.identifying #stageHelp::after{animation:none}}
+  
+  /* Invite students to use the word banks during the first-keyword step. */
+  @keyframes wordBankInvite{0%,100%{box-shadow:0 5px 15px #321a4d08;transform:scale(1);border-color:#e1d9e9}50%{box-shadow:0 0 0 5px #36a77725,0 9px 25px #247b5830;transform:scale(1.012);border-color:#42a77a}}
+  @keyframes wordBankTapHint{0%,100%{opacity:.8;transform:translateY(0)}50%{opacity:1;transform:translateY(4px)}}
+  /* Step 2 pulses only while an AND/OR decision is required. */
+  @keyframes booleanChoicePulse{0%,100%{transform:scale(1);box-shadow:0 5px 0 #d8c3f1,0 0 0 0 rgba(103,65,161,.26)}50%{transform:scale(1.018);box-shadow:0 5px 0 #d8c3f1,0 0 0 9px rgba(103,65,161,.08)}}
+  @keyframes booleanButtonPulse{0%,100%{transform:scale(1);border-color:#6741a1}50%{transform:scale(1.025);border-color:#a47ad8}}
+  @media(prefers-reduced-motion:no-preference){
+    .booleanPrompt{animation:promptIn .25s ease-out,booleanChoicePulse 1.9s ease-in-out .25s infinite;transform-origin:center}
+    .booleanPrompt .booleanChoices button{animation:booleanButtonPulse 1.9s ease-in-out infinite}
+    .booleanPrompt .booleanChoices button:nth-child(2){animation-delay:.28s}
+    .booleanPrompt .booleanChoices button:hover,.booleanPrompt .booleanChoices button:focus-visible{animation:none}
+  }
+  @media(prefers-reduced-motion:no-preference){
+    #banks.inviteWords .bank{animation:wordBankInvite 2.2s ease-in-out infinite;transform-origin:center}
+    #banks.inviteWords .bank:nth-child(2){animation-delay:.22s}
+    #banks.inviteWords .bank:nth-child(3){animation-delay:.44s}
+    #banks.inviteWords .bankLink{animation:wordBankTapHint 1.4s ease-in-out infinite}
+    #banks.inviteWords + .label + #phrases{animation:wordBankInvite 2.2s ease-in-out 0.65s infinite;border-radius:12px}
+  }
+  
+  /* Step 3: after AND/OR, point students back to selectable search words. */
+  @keyframes nextWordGuidePulse{0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(25,137,102,.20)}50%{transform:scale(1.018);box-shadow:0 0 0 8px rgba(25,137,102,.10)}}
+  @keyframes nextWordConfirmationPulse{0%,100%{box-shadow:0 0 0 0 rgba(25,137,102,.25);border-color:#28825c}50%{box-shadow:0 0 0 7px rgba(25,137,102,.10);border-color:#38a57d}}
+  @keyframes nextWordBridgePulse{0%,100%{opacity:.78;transform:translateX(0)}50%{opacity:1;transform:translateX(5px)}}
+  @media(prefers-reduced-motion:no-preference){
+   .buildNextStep.nextWordGuide{animation:nextWordGuidePulse 1.8s ease-in-out infinite;transform-origin:center}
+   .buildNextStep.nextWordGuide .guideArrow{animation:startArrowBounce 1.2s ease-in-out infinite}
+   #booleanDecision .booleanNext{animation:nextWordConfirmationPulse 1.8s ease-in-out infinite}
+   #banks.nextWordBanks .bank{animation:wordBankInvite 2.2s ease-in-out infinite}
+   #banks.nextWordBanks .bank:nth-child(2){animation-delay:.22s}
+   #banks.nextWordBanks .bank:nth-child(3){animation-delay:.44s}
+   #banks.nextWordBanks .bankLink{animation:wordBankTapHint 1.4s ease-in-out infinite}
+   #bankBridge.nextWordBridge{animation:nextWordBridgePulse 1.7s ease-in-out infinite}
+   #phrases.nextWordPhrases{animation:wordBankInvite 2.2s ease-in-out infinite;border:2px solid #e1d9e9;border-radius:12px;padding:7px}
+  }
+  
+  /* Contextual, count-accurate feedback after a completed search change. */
+  .poolChange{margin:0 0 15px;padding:15px 18px;border:3px solid #7450ab;border-radius:17px;background:#f1e9ff;box-shadow:0 5px 18px #6741a126;animation:poolCalloutIn .48s cubic-bezier(.2,1.5,.4,1) both}
+  .poolChange.narrow{background:#fff0d4;border-color:#b77820}
+  .poolChange.broaden{background:#e2f8ed;border-color:#23845a}
+  .poolChange.same{background:#eef0f7;border-color:#64708c}
+  .poolChange .changeHeadline{font-size:1.25rem;font-weight:950;line-height:1.25}
+  .poolChange .changeMath{font-size:1.15rem;font-weight:850;margin:6px 0}
+  .poolChange .changeWhy{font-size:.93rem;line-height:1.45}
+  @keyframes poolCalloutIn{0%{opacity:0;transform:translateY(-12px) scale(.94)}70%{transform:translateY(0) scale(1.025)}100%{opacity:1;transform:translateY(0) scale(1)}}
+  @media(prefers-reduced-motion:reduce){.poolChange{animation:none}}
+  
+  /* Celebrate completion of the three key ideas: invite the next action. */
+  @keyframes unlockReadyPulse{
+    0%,100%{transform:scale(1);box-shadow:0 5px 0 #3d2370,0 0 0 0 rgba(103,65,161,.32)}
+    50%{transform:scale(1.035);box-shadow:0 5px 0 #3d2370,0 0 0 12px rgba(103,65,161,.09)}
+  }
+  @media(prefers-reduced-motion:no-preference){
+    #unlockSearch:not(:disabled){animation:unlockReadyPulse 1.65s ease-in-out infinite;transform-origin:center}
+    #unlockSearch:not(:disabled):hover,#unlockSearch:not(:disabled):focus-visible{animation:none}
+  }
+  
+  /* Every visible, enabled Next button gently pulses on every activity screen. */
+  .actions button.primary:not([hidden]):not(:disabled){animation:navPulse 1.8s ease-in-out infinite;transform-origin:center;will-change:transform,box-shadow}
+  .actions button.primary:not([hidden]):not(:disabled):hover,.actions button.primary:not([hidden]):not(:disabled):focus-visible{animation-play-state:paused}
+  .actions button[hidden]{display:none!important}
+  @keyframes navPulse{0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(109,66,177,0)}50%{transform:scale(1.045);box-shadow:0 0 0 8px rgba(109,66,177,.13)}}
+  @media(prefers-reduced-motion:reduce){.actions button.primary{animation:none!important}}
+  
+  /* Attention sequence: a traveling highlight, then a brief emphasis on the numbers. */
+  .poolChange:not([hidden]){position:relative;isolation:isolate;overflow:hidden;margin:0 0 15px;padding:15px 18px;border-width:3px;border-radius:17px;box-shadow:0 5px 18px #6741a126;animation:feedbackAppear .25s ease-out both}
+  .poolChange .changeHeadline{font-size:1.25rem;font-weight:950;line-height:1.25}
+  .poolChange .changeMath{font-size:1.15rem;font-weight:850;margin:6px 0;font-variant-numeric:tabular-nums;display:table;position:relative;border-radius:7px}
+  .poolChange .changeWhy{font-size:.93rem;line-height:1.45}
+  .poolChange:not([hidden])::after{content:'';position:absolute;inset:0;pointer-events:none;z-index:2;background:linear-gradient(105deg,transparent 15%,rgba(255,255,255,.08) 35%,rgba(255,226,75,.95) 49%,rgba(255,255,255,.1) 62%,transparent 80%);transform:translateX(-125%);animation:feedbackSweep 1.35s .1s ease-in-out 1 both}
+  .poolChange:not([hidden]) .changeHeadline{animation:feedbackInk .5s .3s ease-out both}
+  .poolChange:not([hidden]) .changeMath{animation:feedbackNumber 1s .52s ease-in-out both}
+  .poolChange.broaden .changeMath{--feedback-accent:#168654}
+  .poolChange.narrow .changeMath{--feedback-accent:#bb7412}
+  .poolChange.same .changeMath{--feedback-accent:#586c91}
+  .poolChange:not(.broaden):not(.narrow):not(.same) .changeMath{--feedback-accent:#7450ab}
+  @keyframes feedbackAppear{from{opacity:.65;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes feedbackSweep{0%{transform:translateX(-125%)}100%{transform:translateX(125%)}}
+  @keyframes feedbackInk{0%{opacity:.45}100%{opacity:1}}
+  @keyframes feedbackNumber{0%,100%{box-shadow:inset 0 -0px 0 transparent;transform:scale(1)}35%,70%{box-shadow:inset 0 -9px 0 color-mix(in srgb,var(--feedback-accent) 27%,transparent);transform:scale(1.045)}}
+  @media(prefers-reduced-motion:reduce){.poolChange:not([hidden]),.poolChange:not([hidden])::after,.poolChange:not([hidden]) .changeHeadline,.poolChange:not([hidden]) .changeMath{animation:none!important}}
+  
+  /* High-contrast, unmistakable visual feedback, triggered only after keyword selection. */
+  @keyframes jbaCalloutSpotlight{
+    0%{background:#fff06b;outline:0 solid #ffbd18;box-shadow:0 0 0 0 #ffcb3488;filter:brightness(1.12)}
+    18%{background:#ffe23d;outline:6px solid #ffbd18;box-shadow:0 0 0 12px #ffcb3455;filter:brightness(1.2)}
+    45%{background:#fff06b;outline:3px solid #ffbd18;box-shadow:0 0 0 7px #ffcb3422;filter:brightness(1.08)}
+    72%{background:#ffe878;outline:5px solid #ffbd18;box-shadow:0 0 0 10px #ffcb3433;filter:brightness(1.1)}
+    100%{background:var(--feedback-rest,#e2f8ed);outline:0 solid transparent;box-shadow:0 5px 18px #6741a126;filter:none}
+  }
+  @keyframes jbaCountSpotlight{
+    0%,100%{transform:scale(1)} 25%,65%{transform:scale(1.11)}
+  }
+  .poolChange.broaden{--feedback-rest:#e2f8ed}
+  .poolChange.narrow{--feedback-rest:#fff0d4}
+  .poolChange.same{--feedback-rest:#eef0f7}
+  .poolChange.keywordFlash:not([hidden]){animation:jbaCalloutSpotlight 3s ease-in-out infinite alternate!important;overflow:visible;z-index:2}
+  .poolChange.keywordFlash:not([hidden]) .changeMath{animation:jbaCountSpotlight 3s ease-in-out infinite!important;transform-origin:left center}
+  .poolChange.keywordFlash:not([hidden])::after{display:none!important}
+  @media(prefers-reduced-motion:reduce){.poolChange.keywordFlash:not([hidden]),.poolChange.keywordFlash:not([hidden]) .changeMath{animation:none!important}}
+  
+  .realSearchPrompt{margin:14px 0 24px;padding:20px;border:3px solid #6d49aa;border-radius:18px;background:#f4efff;box-shadow:0 5px 0 #d9c9f2}
+  .realSearchEyebrow{font-size:.78rem;font-weight:950;letter-spacing:.08em;color:#603d94}
+  .realSearchPrompt h2{font-size:clamp(1.35rem,2.5vw,1.85rem);margin:7px 0 8px;line-height:1.2}
+  .realSearchPrompt p{font-size:1.02rem;line-height:1.45;margin:7px 0 13px}
+  .realSearchLinks{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0}
+  .realSearchLinks a{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font-weight:900;font-size:1.05rem;padding:13px 16px;border-radius:12px;border:2px solid #58348c;background:#fff;color:#4e2c83;box-shadow:0 3px 0 #c5b5df}
+  .realSearchLinks a:hover,.realSearchLinks a:focus-visible{background:#58348c;color:#fff;transform:translateY(-2px)}
+  .realSearchPrompt .realSearchTip{font-size:.94rem;font-weight:750;margin-bottom:0;color:#4e4270}
+  @media(max-width:600px){.realSearchLinks{flex-direction:column}.realSearchLinks a{width:100%}}
+  
+  /* Dedicated real-world research page, with no simulated pool competing for attention. */
+  #game.realWorldStage .layout{display:block;max-width:1000px;margin:0 auto}
+  #game.realWorldStage .layout>.panel:first-child{width:100%;max-width:none}
+  #game.realWorldStage .layout>.panel:nth-child(2){display:none}
+  #game.realWorldStage #stageTitle,#game.realWorldStage #stageHelp{display:none}
+  .realWorldIntro{font-size:.85rem;font-weight:900;letter-spacing:.08em;color:#65419c}
+  .realWorldTitle{font-size:clamp(1.8rem,4vw,2.6rem);margin:12px 0}
+  .realWorldLead{font-size:1.1rem;margin-bottom:22px}
+  .realWorldCards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+  .realWorldCard{border:2px solid #d4c8e6;border-radius:20px;padding:24px;background:#fff;display:flex;flex-direction:column;gap:10px}
+  .realWorldIcon{font-size:2.3rem}
+  .realWorldCard h3{font-size:1.55rem;margin:0}
+  .realWorldPurpose{font-size:.85rem;font-weight:950;letter-spacing:.05em;color:#5d3d93}
+  .realWorldCard p{font-size:1.05rem;line-height:1.5;flex:1;margin:0}
+  .realWorldCard a{display:block;text-align:center;text-decoration:none;background:#633e9a;color:white;font-weight:900;padding:15px;border-radius:12px;margin-top:10px}
+  .realWorldCard a:hover,.realWorldCard a:focus-visible{background:#40256c}
+  .realWorldTry{background:#f1f7ff;border-left:5px solid #5478c0;border-radius:10px;padding:16px;margin:20px 0;font-size:1.02rem}
+  @media(max-width:650px){.realWorldCards{grid-template-columns:1fr}}
+  <style>.poolNextWrap{display:flex;justify-content:flex-end;margin-top:22px;padding-top:14px;border-top:2px solid #eee5f5}.poolNextWrap[hidden]{display:none!important}.poolNextWrap button{min-width:145px}@media(prefers-reduced-motion:no-preference){.poolNextWrap .primary{animation:nextButtonPulse 1.8s ease-in-out infinite}}</style><style>
+  .realWorldKeywords{margin:24px 0;padding:20px;border:2px solid #ddd3ee;border-radius:18px;background:#faf8ff}
+  .realWorldKeywords h3{margin:0 0 7px;font-size:1.35rem}
+  .realWorldKeywords>p{margin:0 0 16px;line-height:1.5}
+  .realKeywordGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+  .realKeywordCard{padding:14px;border-radius:13px;background:white;border:1px solid #ddd4eb}
+  .realKeywordCard h4{font-size:1.04rem;line-height:1.35;margin:0 0 12px;color:#4b2d7e}
+  .realKeywordWords,.realPhraseWords{display:flex;flex-wrap:wrap;gap:7px}
+  .realKeywordWords span,.realPhraseWords span{display:inline-block;padding:6px 9px;border-radius:8px;background:#f0eafa;font-size:.87rem;line-height:1.25}
+  .realPhraseBank{margin-top:15px}
+  .realPhraseBank strong{display:block;margin-bottom:9px}
+  @media(max-width:800px){.realKeywordGrid{grid-template-columns:1fr}}
+  </style><style>
+  /* Persistent visual guidance on the final research page and pool navigation. */
+  @keyframes jbaKeywordAttention {
+    0%,100% {background-color:#faf8ff;border-color:#ddd3ee;box-shadow:0 0 0 0 rgba(110,72,177,0)}
+    50% {background-color:#fff0ba;border-color:#b379df;box-shadow:0 0 0 7px rgba(137,88,196,.18)}
+  }
+  @keyframes jbaPoolNextAttention {
+    0%,100% {transform:translateY(0) scale(1);box-shadow:0 0 0 0 rgba(103,63,166,.12);filter:brightness(1)}
+    50% {transform:translateY(-3px) scale(1.045);box-shadow:0 0 0 8px rgba(103,63,166,.25);filter:brightness(1.15)}
+  }
+  @media (prefers-reduced-motion:no-preference) {
+    #game.realWorldStage .realWorldKeywords {animation:jbaKeywordAttention 2.4s ease-in-out infinite;}
+    #game:not(.realWorldStage) .poolNextWrap:not([hidden]) #poolNext {animation:jbaPoolNextAttention 1.6s ease-in-out infinite !important;transform-origin:center;}
+  }
+  @media (prefers-reduced-motion:reduce) {
+    #game.realWorldStage .realWorldKeywords {border:3px solid #7c51ba;background:#fff4d7;}
+    .poolNextWrap:not([hidden]) #poolNext {outline:3px solid #b38bdf;outline-offset:3px;}
+  }
+  </style></head><body><header><div><div class="brand">✦ JBA · RESEARCH REMIX LAB</div><div class="tiny">Lenox Library · Boolean Search Sandbox</div></div><button class="ghost" id="homeButton" hidden>↩ Change business</button></header><main><section id="landing"><div class="intro"><div class="eyebrow">Your project. Your search.</div><h1>Pick your business. 🔎</h1><p>Every business has a different research mission. Choose yours, then build a search and see what happens.</p></div><div class="businesses" id="businesses"></div></section><section id="game" hidden><div class="steps" id="steps"></div><div class="layout"><section class="panel"><div class="eyebrow" id="businessName"></div><h1 id="stageTitle"></h1><p class="help" id="stageHelp"></p><div class="question" id="question"></div><div id="identify" hidden><div class="identifyQuestion" id="identifyQuestion"></div><p class="status" id="conceptProgress"></p><div class="ideaBanks" id="ideaBanks" aria-label="Word banks unlocking as you select ideas"></div><p class="help" id="identifyNote"></p><button class="primary" id="unlockSearch" disabled>Unlock search words →</button></div><div id="builder"><div class="workspace"><div class="searchToolbar"><div class="label">YOUR SEARCH · build it one step at a time</div><button type="button" class="resetSearch" id="reset">↻ Reset search</button></div><div class="query" id="query"></div><div id="booleanDecision" aria-live="polite"></div></div><div class="buildNextStep" id="buildNextStep" role="status"></div><p class="help" id="bankBridge">The three ideas you found are now your word-bank headings. Try different words under each one.</p><div id="banks"></div><div class="label">Try an exact phrase</div><div class="words" id="phrases"></div><div class="actions"><button class="secondary" id="backToIdeas">← Back</button><button class="primary" id="toRescue">Next →</button></div></div><div id="rescue" hidden><div class="pill" id="rescueBadge"></div><div class="scenario" id="rescuePrompt"></div><div id="rescueChoices"></div><div class="feedback" id="rescueFeedback" hidden></div><div class="actions"><button class="secondary" id="rescueBack">← Back to builder</button><button class="primary" id="nextRescue" hidden>Next rescue →</button><button class="primary" id="toSources" hidden>Next →</button></div></div><div id="tryReal" hidden><div class="realWorldIntro">🌐 FROM PRACTICE TO REAL RESEARCH</div><h2 class="realWorldTitle">Now try your search for real!</h2><p class="realWorldLead">Use your project's keywords in two different places. Each has a different job.</p><div class="realWorldCards"><article class="realWorldCard"><div class="realWorldIcon">🌐</div><h3>Google</h3><div class="realWorldPurpose">YOUR SPECIFIC BUSINESS</div><p>Look for information about <strong id="googleBusinessName">your business</strong>: its website, services, customers, events, and local news.</p><a href="https://www.google.com/" target="_blank" rel="noopener noreferrer">Open Google ↗</a></article><article class="realWorldCard"><div class="realWorldIcon">📚</div><h3>Research@UWW</h3><div class="realWorldPurpose">THE INDUSTRY &amp; BIGGER PICTURE</div><p>Look for research about the <strong id="libraryIndustry">industry</strong>: customer behavior, marketing strategies, trends, and evidence that can inform your recommendations.</p><a href="https://www.uww.edu/library" target="_blank" rel="noopener noreferrer">Open Research@UWW ↗</a></article></div><section class="realWorldKeywords" aria-labelledby="realKeywordTitle"><h3 id="realKeywordTitle">Your keyword banks</h3><p>Keep these words handy while you search. Try a term from each idea, or combine them with AND or OR.</p><div id="realKeywordBanks" class="realKeywordGrid"></div><div class="realPhraseBank"><strong>Exact phrases to try</strong><div id="realKeywordPhrases" class="realPhraseWords"></div></div></section><div class="realWorldTry">🔎 <strong>Try this:</strong> Start with one keyword. Add AND or OR. How are the results different in each place?</div><div class="actions"><button class="secondary" id="tryRealBack">← Back</button></div></div><div id="sources" hidden><div class="pill" id="scenarioCounter"></div><div class="scenario" id="sourcePrompt"></div><p class="hint">Where would you START looking? More than one source can be useful.</p><div class="sourceOptions" id="sourceOptions"></div><div class="feedback" id="sourceFeedback" hidden></div><div class="actions"><button class="secondary" id="sourcesBack">← Back</button><button class="primary" id="nextSource" hidden>Next question →</button></div></div><div id="finish" hidden><div class="scenario">🎉 Research remix complete!</div><p>You built a Boolean search, practiced fixing it, and chose where to look for information.</p><p>Try your own search with your project topic in both places. Compare what you find!</p><div class="realSearchLinks"><a href="https://www.google.com/" target="_blank" rel="noopener noreferrer">🌐 Open Google ↗</a><a href="https://www.uww.edu/library" target="_blank" rel="noopener noreferrer">📚 Open Research@UWW ↗</a></div><div class="actions"><button class="secondary" id="restart">↻ Play again</button></div></div></section><section class="panel"><div class="eyebrow">Live experiment</div><h1 id="rightTitle">Watch the pool react.</h1><p class="help" id="rightHelp">These are simulated results, not real articles.</p><div id="identifyBankDock" hidden></div><div id="poolChange" class="poolChange" role="status" aria-live="polite" hidden></div><div class="pool" id="pool" aria-hidden="true"></div><div class="count" id="count" role="status" aria-live="polite"></div><div class="note" id="note"></div><div class="poolNextWrap" id="poolNextWrap" hidden><button type="button" class="primary" id="poolNext">Next →</button></div></section></div></section><div class="footer">Built for Janesville Business Academy · Experiment freely — there is no perfect search.</div></main>
+  <script>
+  const configs=[
+  {id:'bodacious',name:'Bodacious',icon:'☕',topic:'Social media engagement',question:'Who is Bodacious’s primary social media audience, and what types of content are most effective at reaching and engaging them?',groups:[["👥", "Audience", ["customers", "target audience", "Gen Z", "young adults", "local residents", "coffee lovers", "customer demographics", "consumer interests"]], ["📱", "Content", ["social media", "Instagram", "TikTok", "Facebook", "Reels", "short-form video", "stories", "promotional posts", "event posts"]], ["💬", "Engagement", ["engagement", "likes", "shares", "comments", "reach", "clicks", "customer interaction", "brand awareness"]]],phrases:['target audience','social media','short-form video','brand awareness'],sources:[['What kinds of social media content do young adults tend to engage with?','library','Marketing and consumer-behavior studies can help explain broader engagement patterns.'],['What events is Bodacious advertising this week?','web','The business’s current social accounts and website are the best starting point.']]},
+  {id:'museum',name:'Children’s Museum of Rock County',icon:'🧩',topic:'Museum revenue',question:'What is the most effective way for a children’s museum to improve revenue from its gift shop and café?',groups:[["🏛️", "Museum", ["children’s museum", "museum", "family attraction", "visitor center", "cultural institution", "interactive museum", "nonprofit museum", "educational attraction"]], ["🛍️", "Revenue ideas", ["gift shop", "museum store", "café", "merchandise", "retail sales", "souvenirs", "inventory", "product mix"]], ["📈", "Business outcomes", ["revenue", "visitor spending", "average purchase", "profit margin", "sales growth", "customer purchases", "pricing", "retail income"]]],phrases:['children’s museum','gift shop','visitor spending','profit margin'],sources:[['What retail strategies increase visitor spending at museums?','library','Research about museum retail and visitor behavior is a useful starting point.'],['What items and prices are listed in nearby museum gift shops?','web','Current museum websites and store listings are more useful for live product comparisons.']]},
+  {id:'festival',name:'Festival Foods',icon:'🛒',topic:'Grocery shopping habits',question:'What keeps grocery shoppers loyal to a store, and what causes them to shop elsewhere?',groups:[["🛒", "Grocery shopping", ["grocery store", "supermarket", "food shopping", "weekly groceries", "grocery customers", "online grocery", "in-store shopping", "household shoppers"]], ["❤️", "Loyalty", ["customer loyalty", "repeat customers", "store preference", "brand loyalty", "customer retention", "loyalty programs", "regular shoppers", "repeat visits"]], ["💵", "Decision factors", ["store switching", "competitor stores", "shopping elsewhere", "food prices", "convenience", "discounts", "product quality", "customer service", "shopping budget"]]],phrases:['customer loyalty','grocery store','shopping habits','customer retention'],sources:[['What factors influence loyalty to grocery stores?','library','Consumer research can explain patterns across many shoppers.'],['What are this week’s prices and promotions at local grocers?','web','Store websites and current advertisements are better for changing prices.']]},
+  {id:'forward',name:'Forward Janesville',icon:'🏙️',topic:'Downtown vitality',question:'What makes a downtown business district attractive to customers, especially young people?',groups:[["🏙️", "Downtown places", ["downtown", "main street", "business district", "city center", "commercial district", "storefronts", "local businesses", "walkability"]], ["✨", "Attractions", ["customers", "shoppers", "visitors", "foot traffic", "customer visits", "shopping", "restaurants", "customer experience"]], ["🧑‍🤝‍🧑", "People and impact", ["young adults", "teenagers", "high school students", "Gen Z", "youth activities", "teen preferences", "public spaces", "community events"]]],phrases:['downtown business','foot traffic','economic development','public spaces'],sources:[['Which downtown Janesville storefronts are currently vacant?','web','Current maps, business listings, and in-person observation are essential.'],['What factors encourage young people to visit downtown districts?','library','Urban planning and consumer research can offer evidence about broader patterns.']]},
+  {id:'gifts',name:'GIFTS Men’s Shelter Store',icon:'💜',topic:'Thrift store outreach',question:'How can a nonprofit thrift store use social media to attract customers and support its mission?',groups:[["🧥", "Store", ["thrift store", "secondhand shop", "resale store", "charity shop", "donation store", "nonprofit retail", "used clothing", "community store"]], ["📣", "Promotion", ["social media", "Facebook", "Instagram", "digital marketing", "social posts", "online outreach", "marketing calendar", "community advertising"]], ["🤝", "Impact", ["attract shoppers", "customer awareness", "store visits", "promotions", "customer engagement", "retail sales", "local shoppers", "word of mouth"]]],phrases:['thrift store','social media','nonprofit retail','community support'],sources:[['What is GIFTS Men’s Shelter’s mission and how does its store support it?','web','Start with the organization’s own mission and program descriptions.'],['What marketing approaches help nonprofit thrift stores attract shoppers?','library','Nonprofit marketing and retail research can provide useful strategies.']]},
+  {id:'jack',name:'Jack & Jenny’s',icon:'🍽️',topic:'Catering services',question:'How can Jack & Jenny’s attract customers and market its catering services for local events?',groups:[["👥", "Customers", ["target customers", "customer outreach", "customer acquisition", "repeat bookings", "local customers", "event planners", "group bookings", "customer preferences"]], ["📣", "Marketing", ["promotion", "advertising", "marketing", "social media", "local advertising", "customer referrals", "digital marketing", "word of mouth"]], ["🍽️", "Catering and events", ["catering", "event catering", "food service", "private dining", "party packages", "banquet service", "local events", "office parties", "graduation parties", "weddings", "corporate events", "family celebrations"]]],phrases:['event catering','office parties','target customers','customer feedback'],sources:[['What do competing local venues charge for catering packages?','web','Current venue menus and catering pages are the best starting point.'],['What makes customers choose one catering provider over another?','library','Hospitality and service-marketing research can explain decision factors.']]},
+  {id:'jets',name:'Janesville Jets',icon:'🏒',topic:'Sports event marketing',question:'What marketing strategies can increase student and family attendance at a themed hockey game?',groups:[["🏒", "Sports events", ["event marketing", "promotional campaign", "school outreach", "social media", "team promotion", "community partnerships", "ticket promotions", "fan engagement"]], ["👨‍👩‍👧", "Audience", ["students", "families", "high school", "teenagers", "parents", "local fans", "student attendance", "family attendance"]], ["🎟️", "Promotion and attendance", ["hockey game", "themed game", "school night", "sports event", "minor league hockey", "community sports", "special event", "game night"]]],phrases:['ticket sales','event marketing','fan engagement','community partnerships'],sources:[['Where can fans currently buy Janesville Jets tickets?','web','The team’s official website and ticketing information are best for current locations.'],['What promotional strategies increase attendance at community sporting events?','library','Sports-marketing research can help identify broader attendance strategies.']]},
+  {id:'sauk',name:'Sauk Valley Bank',icon:'🏦',topic:'Young adult banking',question:'What influences adults ages 18–24 when choosing a bank or other financial institution?',groups:[["🏦", "Banking options", ["young adults", "college students", "Gen Z", "18–24", "first-time customers", "emerging adults", "young consumers", "new account holders"]], ["🧑", "Young adults", ["bank choice", "consumer preferences", "banking decisions", "trust", "fees", "convenience", "mobile app", "customer service", "account selection"]], ["💳", "Decisions and needs", ["community bank", "credit union", "online bank", "digital bank", "financial institution", "fintech", "mobile banking", "traditional bank"]]],phrases:['community bank','financial literacy','mobile banking','young adults'],sources:[['What do national surveys show about young adults’ banking habits?','both','Library research can explain consumer behavior, while current public reports such as FDIC surveys provide useful statistics.'],['What checking accounts and fees does Sauk Valley Bank currently advertise?','web','The bank’s current product and fee information should be checked directly.']]},
+  {id:'streamline',name:'Streamline Swim Academy',icon:'🏊',topic:'Swim lesson decisions',question:'What factors influence families when choosing and continuing with a swim lesson program?',groups:[["🏊", "Swimming programs", ["parents", "families", "children", "caregivers", "young swimmers", "local families", "first-time customers", "returning customers"]], ["👨‍👩‍👧", "Families", ["customer retention", "program selection", "parent preferences", "continuing lessons", "customer satisfaction", "scheduling", "convenience", "instructor quality"]], ["⭐", "Decision factors", ["swim lessons", "swim school", "aquatic instruction", "swimming classes", "water safety", "private lessons", "group lessons", "youth swimming"]]],phrases:['swim lessons','water safety','customer satisfaction','adaptive instruction'],sources:[['What do swim schools in Madison and Rockford currently charge?','web','Current school pricing pages are the right starting point for competitor comparisons.'],['What factors influence parents’ decisions about children’s extracurricular programs?','library','Research on family decision-making and program participation may help explain patterns.']]}
+  ];
+  // Align word-bank vocabulary with the highlighted question phrases.
+  for(const c of configs){
+  }
+  const $=id=>document.getElementById(id);let config=null,tokens=[],stage='build',rescueChoice=null,rescueIndex=0,sourceIndex=0,sourceChoice=null;const icons=['📄','📊','📝','📚'];let records=[];
+  function hash(s){let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)}return h>>>0}
+  /* A fixed, deterministic collection of fictional searchable titles and summaries.
+     All stages use the same records and the same Boolean evaluator. */
+  function makeRecords(c){
+   /* Classroom-scale corpus: every word has a small, useful set of matches.
+      Every two vocabulary items share a record, so AND demonstrates overlap.
+      No giant Cartesian product of three word banks. */
+   const groups=c.groups.map(g=>g[2]);
+   const vocabulary=[...new Set([...groups.flat(),...c.phrases])];
+   const out=[];
+   function add(title,summary,icon=c.icon,tags=[]){out.push({id:out.length,title,summary,icon,tags});}
+   const topic=c.topic.toLowerCase();
+   // One shared record per distinct pair. This guarantees useful AND results
+   // without generating hundreds of hits for each individual keyword.
+   for(let i=0;i<vocabulary.length;i++)for(let j=i+1;j<vocabulary.length;j++){
+     const a=vocabulary[i],b=vocabulary[j];
+     add(`${a} and ${b}`,`A fictional research example connecting ${a} with ${b} for this project.`,['📄','📊','📚','💡'][(i+j)%4],[a,b]);
+   }
+   // Small, distinct single-topic records make OR visibly broaden the pool.
+   vocabulary.forEach((word,i)=>{
+     add(`${word}: an overview`,`Background on ${word} and its relevance to the project.`,['📄','📊','💡'][i%3],[word]);
+   });
+   // Phrases can be found on their own, and quotation marks can matter.
+   c.phrases.forEach((phrase,i)=>{
+     const words=norm(phrase).split(' ');
+     if(words.length>1)add(`${words[0]} in context`,`How ${words.slice(1).join(' and ')} can appear separately in a search about the project.`,'📝',[]);
+   });
+   return out;
+  }
+  function norm(s){return String(s).toLowerCase().normalize('NFKC').replace(/[“”]/g,'"').replace(/[’]/g,"'").replace(/[^\p{L}\p{N}]+/gu,' ').trim().replace(/\s+/g,' ')}
+  function termMatch(r,t){
+   const needle=norm(t.value);
+   if(!needle)return false;
+   // Match the record's intentionally indexed topics, not incidental words
+   // appearing in synthetic summaries. This keeps classroom pools manageable.
+   return (r.tags||[]).some(tag=>norm(tag)===needle);
+  }
+  function validExpression(input=tokens){
+   const terms=[],ops=[];let pending=null;
+   for(const t of input){
+    if(t.type==='op'){if(terms.length)pending=t.value;continue}
+    if(terms.length)ops.push(pending||'OR');
+    terms.push(t);pending=null;
+   }
+   return terms.length?{terms,ops}:null;
+  }
+  function matches(r,input=tokens){const expr=validExpression(input);if(!expr)return false;const {terms,ops}=expr;if(!ops.length)return termMatch(r,terms[0]);let acc=termMatch(r,terms[0]),orTotal=false;for(let i=0;i<ops.length;i++){const v=termMatch(r,terms[i+1]);if(ops[i]==='AND')acc=acc&&v;else{orTotal=orTotal||acc;acc=v}}return orTotal||acc}
+  function showQuery(input){return input.map(t=>t.type==='phrase'?'"'+t.value+'"':t.value).join(' ')}
+  function drawPool(list){$('pool').replaceChildren();list.slice(0,96).forEach((r,i)=>{const el=document.createElement('div');el.className='result';el.textContent=r.icon;el.style.animationDelay=Math.min(i,20)*9+'ms';$('pool').append(el)});$('count').textContent=list.length+' simulated results'}
+  let lastCompletedPoolCount=null;
+  function updatePoolChange(count){
+   let el=$('poolChange');
+   if(stage==='build' && tokens.length && tokens.at(-1).type!=='op'){
+     const fresh=el.cloneNode(false);
+     el.replaceWith(fresh);
+     el=fresh;
+   }
+   if(stage!=='build'||!tokens.length){el.hidden=true;lastCompletedPoolCount=null;return}
+   if(tokens.at(-1).type==='op'){return} // Wait until the next keyword completes the query.
+   const old=lastCompletedPoolCount;
+   lastCompletedPoolCount=count;
+   if(old===null){el.hidden=false;el.className='poolChange';el.innerHTML='<div class="changeHeadline">🔎 Your first keyword found '+count+' results!</div><div class="changeWhy">Choose AND or OR to see how connecting another idea changes this pool.</div>';return}
+   const delta=count-old;
+   const lastOp=[...tokens].reverse().find(t=>t.type==='op')?.value;
+   const direction=delta<0?'narrow':delta>0?'broaden':'same';
+   const headline=delta<0?'📉 Your pool got smaller!':delta>0?'📈 Your pool got bigger!':'↔ Your pool stayed the same';
+   const reason=delta<0?'These results match fewer records. AND requires both connected ideas.':delta>0?'More records now match your search. OR accepts either connected idea.':lastOp==='AND'?'All remaining results already matched both ideas. AND does not always remove results.':lastOp==='OR'?'The new idea did not add any new matching records. OR does not always increase results.':'The number of matching results did not change.';
+   el.hidden=false;el.className='poolChange '+direction+' keywordFlash';
+   el.innerHTML='<div class="changeHeadline">'+headline+'</div><div class="changeMath">'+old+' → '+count+' results '+(delta<0?'(−'+Math.abs(delta)+')':delta>0?'(+'+delta+')':'(no change)')+'</div><div class="changeWhy">'+reason+'</div>';
+   void el.offsetWidth;
+  }
+  function chooseKeyword(value,type){
+   // First keyword is free. After that, an explicit operator is required.
+   if(tokens.length && tokens.at(-1).type!=='op')return;
+   if(tokens.some(t=>t.type===type&&t.value===value))return;
+   tokens.push({type,value});renderBuild();
+  }
+  function chooseOperator(value){
+   if(!tokens.length || tokens.at(-1).type==='op')return;
+   tokens.push({type:'op',value});renderBuild();
+  }
+  function removeSearchChip(i){
+   tokens.splice(i,1);
+   // Keep a valid alternating query after removing any chip.
+   if(tokens[0]?.type==='op')tokens.shift();
+   for(let j=1;j<tokens.length;){
+     if(tokens[j].type===tokens[j-1].type || (tokens[j].type!=='op'&&tokens[j-1].type!=='op'))tokens.splice(j,1);
+     else j++;
+   }
+   if(tokens.at(-1)?.type==='op')tokens.pop();
+   renderBuild();
+  }
+  function renderBuild(){const q=$('query');q.replaceChildren();if(!tokens.length)q.textContent='Your first keyword will appear here ↓';tokens.forEach((t,i)=>{const chip=document.createElement('span');chip.className='chip'+(t.type==='op'?' op':'');chip.append(document.createTextNode(t.type==='phrase'?'"'+t.value+'"':t.value));const b=document.createElement('button');b.textContent='×';b.setAttribute('aria-label','Remove '+t.value);b.onclick=()=>{removeSearchChip(i)};chip.append(b);q.append(chip)});const decision=$('booleanDecision');decision.replaceChildren();
+   const waitingForOperator=tokens.length>0 && tokens.at(-1).type!=='op';
+   const waitingForWord=tokens.length>0 && tokens.at(-1).type==='op';
+   const guide=$('buildNextStep');
+   if(!tokens.length)guide.innerHTML='<span class="buildStepNumber">1</span><div><strong>START HERE: Choose one keyword</strong><p>Tap any word in the banks below. Watch the results appear.</p></div><span class="guideArrow">↓</span>';
+   else if(waitingForOperator)guide.innerHTML='<span class="buildStepNumber">2</span><div><strong>NEXT: Choose AND or OR above ↑</strong><p>AND finds results with <b>both</b> ideas. OR finds results with <b>either</b> idea.</p></div>';
+   else guide.innerHTML='<span class="buildStepNumber">3</span><div><strong>NOW: Choose your next keyword ↓</strong><p>Tap a word in any bank. Your results will change immediately.</p></div><span class="guideArrow">↓</span>';
+   guide.classList.toggle('chooseOperator',waitingForOperator);
+   guide.classList.toggle('startGuide',tokens.length===0);
+   guide.classList.toggle('nextWordGuide',waitingForWord);
+   $('bankBridge').classList.toggle('nextWordBridge',waitingForWord);
+   $('phrases').classList.toggle('nextWordPhrases',waitingForWord);
+   if(waitingForOperator){
+     const panel=document.createElement('div');panel.className='booleanPrompt';
+     panel.innerHTML='<strong>STEP 2 · Choose how to connect your next word</strong><p>Pick one. You can’t add another keyword until you choose.</p><div class="booleanChoices"><button type="button" data-choice="AND">AND<span>🔍 Narrow · both ideas</span></button><button type="button" data-choice="OR">OR<span>🌈 Broaden · either idea</span></button></div>';
+     panel.querySelectorAll('[data-choice]').forEach(btn=>btn.onclick=()=>chooseOperator(btn.dataset.choice));decision.append(panel);
+   }else if(waitingForWord){
+     const msg=document.createElement('div');msg.className='booleanNext';msg.textContent='✓ '+tokens.at(-1).value+' selected! Now tap a keyword below to complete your search.';decision.append(msg);
+   }
+   const banks=$('banks');banks.classList.toggle('inviteWords',tokens.length===0 || waitingForWord);banks.classList.toggle('nextWordBanks',waitingForWord);banks.replaceChildren();config.groups.forEach((g,i)=>{const box=document.createElement('div');box.className='bank';box.dataset.concept=i;const label=document.createElement('div');label.className='bankConceptLabel';label.textContent='Key idea '+(i+1)+' from your question';box.append(label);const title=document.createElement('h2');const heading=document.createElement('span');heading.className='bankHeadingText';heading.textContent=g[0]+' '+keyConcepts[config.id][i];title.append(heading);box.append(title);const link=document.createElement('div');link.className='bankLink';link.textContent=waitingForOperator?'🔒 Choose AND or OR above to unlock words':'↓ Tap a word to search';box.append(link);const words=document.createElement('div');words.className='words';g[2].forEach(w=>{const b=document.createElement('button');b.className='word'+(tokens.some(t=>t.type==='term'&&t.value===w)?' selected':'');b.textContent=w;b.setAttribute('aria-pressed',String(b.classList.contains('selected')));b.disabled=waitingForOperator || tokens.some(t=>t.type==='term'&&t.value===w);b.onclick=()=>chooseKeyword(w,'term');words.append(b)});box.append(words);banks.append(box)});$('phrases').replaceChildren();config.phrases.forEach(p=>{const b=document.createElement('button');b.className='word'+(tokens.some(t=>t.type==='phrase'&&t.value===p)?' selected':'');b.textContent='“'+p+'”';b.disabled=waitingForOperator || tokens.some(t=>t.type==='phrase'&&t.value===p);b.onclick=()=>chooseKeyword(p,'phrase');$('phrases').append(b)});const visible=records.filter(r=>matches(r));if(!waitingForWord)drawPool(visible);updatePoolChange(visible.length);const e=validExpression();const opCount=tokens.filter(t=>t.type==='op').length;const n=$('note');if(!tokens.length)n.textContent='STEP 1: Tap any keyword to start your search.';else if(tokens.at(-1).type==='op')n.textContent='STEP 3: Choose a keyword to connect with '+tokens.at(-1).value+'. Your results will update when you choose it.';else if(opCount && visible.length===0){const last=tokens.at(-1);const prior=tokens.slice(0,-2);const previousCount=records.filter(r=>matches(r,prior)).length;const termCount=records.filter(r=>termMatch(r,last)).length;n.textContent='No records match this full combination. “'+last.value+'” matches '+termCount+' records by itself; the earlier search matches '+previousCount+'. AND requires the same record to match both. Try OR or remove a requirement to broaden your search.';const rescue=document.createElement('button');rescue.className='secondary';rescue.textContent='↔ Change the last AND to OR';rescue.style.marginTop='10px';rescue.onclick=()=>{for(let i=tokens.length-2;i>=0;i--){if(tokens[i].type==='op'){tokens[i].value='OR';break}}renderBuild()};if(tokens.some(t=>t.type==='op'&&t.value==='AND'))n.append(document.createElement('br'),rescue)}else if(opCount)n.textContent='To add another idea, choose AND (narrow) or OR (broaden) in the search box.';else n.textContent='STEP 2: Your first keyword is searching! To add another, choose AND or OR in the search box.'}
+  function showStage(s){stage=s;document.getElementById('game').classList.toggle('identifying',s==='identify');document.getElementById('game').classList.toggle('realWorldStage',s==='tryReal');const bankNode=$('ideaBanks');if(s==='identify'&&!window.matchMedia('(max-width:800px)').matches){$('identifyBankDock').append(bankNode);$('identifyBankDock').append($('unlockSearch'))}else{$('identify').insertBefore(bankNode,$('identifyNote'));$('identify').append($('unlockSearch'))}$('identifyBankDock').hidden=s!=='identify';$('poolNextWrap').hidden=s!=='build';['identify','builder','rescue','tryReal','sources','finish'].forEach(x=>$(x).hidden=x!==({identify:'identify',build:'builder',rescue:'rescue',tryReal:'tryReal',sources:'sources',finish:'finish'}[s]));$('steps').innerHTML=['identify','build','rescue','tryReal'].map((x,i)=>'<span class="step '+(x===s?'active':'')+'">'+(i+1)+' · '+['Find ideas','Build','Rescue','Try it for real'][i]+'</span>').join('');const titles={identify:'Find the key ideas.',build:'Build the search.',rescue:'Search Rescue!',tryReal:'Now try your search for real!',sources:'Where would you search?',finish:'You did it!'};const helps={identify:'Tap the three important ideas in your research question to unlock the search words.',build:'Build your search in three moves: keyword → AND / OR → keyword.',rescue:'A search can be too broad or too narrow. What would you change?',tryReal:'',sources:'Different questions need different kinds of information.',finish:'Take what you learned into your actual project.'};$('stageTitle').textContent=titles[s];$('stageHelp').textContent=helps[s];$('question').hidden=s!=='build';$('rightTitle').textContent=s==='build'?'Watch the pool react.':s==='rescue'?'Watch the rescue.':s==='sources'?'Think about the source.':'Your search toolkit';$('rightHelp').textContent=s==='build'?'These are simulated results, not real articles.':s==='rescue'?'Try a change and see how it affects the simulated search.':s==='identify'?'':'The pool shows your last search. Your real research will use actual sources.';if(s==='identify')renderIdentify();if(s==='build'){lastCompletedPoolCount=null;renderQuestionConnections();renderBuild();}if(s==='rescue')renderRescue();if(s==='tryReal'){renderRealKeywordBanks(); $('googleBusinessName').textContent=config.name;$('libraryIndustry').textContent=config.topic;window.scrollTo({top:0,behavior:'instant'}); }if(s==='sources')renderSources();if(s==='finish'){$('note').textContent='Remember: a good search is one you can adjust. Choose where to search based on the information you need.'}}
+  function openBusiness(id){lastCompletedPoolCount=null;config=configs.find(c=>c.id===id)||configs[0];records=makeRecords(config);tokens=[];selectedConcepts=new Set();rescueChoice=null;rescueIndex=0;sourceIndex=0;sourceChoice=null;$('landing').hidden=true;$('game').hidden=false;$('homeButton').hidden=false;$('businessName').textContent=config.icon+' '+config.name+' · '+config.topic;$('question').textContent=config.question;history.replaceState(null,'','#'+config.id);showStage('identify');window.scrollTo({top:0,behavior:'instant'})}
+  function home(){config=null;$('landing').hidden=false;$('game').hidden=true;$('homeButton').hidden=true;history.replaceState(null,'',location.pathname+location.search);window.scrollTo({top:0,behavior:'instant'})}
+  const rescueChallenges=[
+   {mode:'narrow',title:'Almost nothing!',prompt:'Your search is so specific that useful information might be missing. What could help?',options:[['or','Add a synonym with OR',true,'OR includes records using either word.'],['and','Add another AND',false,'AND requires more conditions and usually narrows.'],['quote','Put more words in quotation marks',false,'Exact phrases usually make searches more restrictive.']]},
+   {mode:'broad',title:'Result overload!',prompt:'You searched a broad topic and found lots of unrelated information. What would help?',options:[['and','Add another important concept with AND',true,'AND helps focus on records containing both concepts.'],['or','Add even more terms with OR',false,'OR usually increases the number of results.'],['remove','Remove a requirement',false,'Removing a requirement usually broadens the search.']]},
+   {mode:'narrow',title:'Different words, same idea',prompt:'You searched for one term, but other writers may use different vocabulary. What next?',options:[['or','Try related terms joined with OR',true,'Synonyms connected by OR help catch different ways of describing the same idea.'],['phrase','Use an exact phrase',false,'Exact phrases usually narrow a search rather than broaden it.'],['and','Require three more concepts',false,'More AND conditions can exclude useful sources.']]},
+   {mode:'broad',title:'Too many meanings!',prompt:'A common word is pulling in results about other subjects. How could you make your meaning clearer?',options:[['phrase','Use quotation marks around a meaningful phrase',true,'Quotation marks keep the words together and can reduce unrelated matches.'],['or','Add an unrelated alternative with OR',false,'An unrelated OR term would add even more noise.'],['remove','Remove the specific topic word',false,'Removing the topic makes the search less focused.']]},
+   {mode:'narrow',title:'The search is stuck!',prompt:'You have connected several different concepts with AND and found zero results. What should you try?',options:[['remove','Remove one less-important requirement',true,'Fewer required concepts can bring back useful results.'],['and','Add one more AND requirement',false,'That would make an already restrictive search even narrower.'],['quote','Add more exact phrases',false,'More exact phrases usually make an already restrictive search narrower.']]},
+   {mode:'broad',title:'Keep the useful results',prompt:'Your search returns plenty of results, but many miss your main topic. Which adjustment is most promising?',options:[['and','Require your main topic with AND',true,'Requiring the main concept helps focus the results.'],['or','Add a very broad word with OR',false,'A broad OR term usually adds unrelated results.'],['remove','Remove the main topic',false,'That would make relevance harder to control.']]}
+  ];
+  /* All six rescue challenges use the very same record-matching engine as Build.
+     Examples are chosen per business and verified to change the result count. */
+  function rescuePlan(index){
+   const op=v=>({type:'op',value:v}),term=v=>({type:'term',value:v});
+   const words=config.groups.map(g=>g[2]);
+   const count=q=>records.filter(r=>matches(r,q)).length;
+   const a=term(words[0][0]), b=term(words[1][0]), d=term(words[2][0]);
+   const synonym=term(words[0][1]);
+   const first=[a,op('AND'),b,op('AND'),d];
+   if(index===0){
+     const before=first,after=[a,op('AND'),b,op('AND'),d,op('OR'),synonym];
+     return {before,good:after};
+   }
+   if(index===1)return {before:[a],good:[a,op('AND'),b]};
+   if(index===2)return {before:[a],good:[a,op('OR'),synonym]};
+   if(index===3){
+     for(const phrase of config.phrases){
+       if(norm(phrase).split(' ').length<2)continue;
+       const before=[term(phrase)],good=[{type:'phrase',value:phrase}];
+       if(count(before)>count(good)&&count(good)>0)return {before,good};
+     }
+   }
+   if(index===4){
+     // The last requirement is an impossible exact phrase. Removing it restores
+     // real records, making the stuck-search example honest and reproducible.
+     const impossible={type:'phrase',value:'unfindable example term'};
+     return {before:[a,op('AND'),b,op('AND'),impossible],good:[a,op('AND'),b]};
+   }
+   return {before:[a,op('OR'),b],good:[a,op('AND'),b]};
+  }
+  function rescueExample(){return rescuePlan(rescueIndex).before}
+  function rescueModified(base,id){
+   const plan=rescuePlan(rescueIndex),op=v=>({type:'op',value:v});
+   const words=config.groups.map(g=>g[2]);
+   const alternative={type:'term',value:words[0][1]};
+   if(id===rescueChallenges[rescueIndex].options.find(x=>x[2])[0])return plan.good;
+   if(id==='or')return [...base,op('OR'),alternative];
+   if(id==='and')return [...base,op('AND'),{type:'term',value:words[1][1]}];
+   if(id==='remove')return base.length>2?base.slice(0,-2):base;
+   if(id==='phrase')return [{type:'phrase',value:base[0].value},...base.slice(1)];
+   return base;
+  }
+  function renderRescue(){
+   const c=rescueChallenges[rescueIndex];rescueChoice=null;
+   $('rescueBadge').textContent='Challenge '+(rescueIndex+1)+' of '+rescueChallenges.length+' · '+(c.mode==='narrow'?'🔍 Broaden':'🎯 Narrow');
+   $('rescuePrompt').textContent=c.title+' '+c.prompt;
+   $('rescueChoices').replaceChildren();$('rescueFeedback').hidden=true;$('nextRescue').hidden=true;$('toSources').hidden=true;
+   const baseTokens=rescueExample(c),base=records.filter(r=>matches(r,baseTokens));drawPool(base);
+   $('note').textContent='Starting search: '+showQuery(baseTokens)+' · '+base.length+' results. Choose a change to test it.';
+   // Rotate answer positions by business and challenge, so the correct choice
+   // is not predictably first. Preserve each option's correctness and feedback.
+   const businessIndex=configs.findIndex(item=>item.id===config.id);
+   const correctPosition=(businessIndex+rescueIndex)%c.options.length;
+   const correct=c.options.find(option=>option[2]);
+   const distractors=c.options.filter(option=>!option[2]);
+   const orderedChoices=distractors.slice();
+   orderedChoices.splice(correctPosition,0,correct);
+   orderedChoices.forEach(([id,label,good,explanation])=>{
+    const btn=document.createElement('button');btn.className='choice';btn.textContent=label;
+    btn.onclick=()=>{
+     rescueChoice=id;
+     document.querySelectorAll('#rescueChoices .choice').forEach(x=>x.classList.remove('chosen'));btn.classList.add('chosen');
+     const modified=rescueModified(baseTokens,id),after=records.filter(r=>matches(r,modified));
+     const direction=after.length>base.length?'increased':after.length<base.length?'decreased':'stayed the same';
+     $('rescueFeedback').hidden=false;
+     $('rescueFeedback').textContent=(good?'Good strategy! ':'Try another approach. ')+explanation+' Results '+direction+' ('+base.length+' → '+after.length+').';
+     drawPool(after);
+     $('note').textContent='BEFORE: '+showQuery(baseTokens)+' ('+base.length+') · AFTER: '+showQuery(modified)+' ('+after.length+'). These are matches from the same fictional records.';
+     $('nextRescue').hidden=!(good&&rescueIndex<rescueChallenges.length-1);
+     $('toSources').hidden=!(good&&rescueIndex===rescueChallenges.length-1);
+    };
+    $('rescueChoices').append(btn);
+   });
+  }
+  const keyConcepts = {"bodacious": ["social media audience", "types of content", "engaging"], "museum": ["children’s museum", "gift shop and café", "revenue"], "festival": ["grocery shoppers", "loyal", "shop elsewhere"], "forward": ["downtown business district", "customers", "young people"], "gifts": ["nonprofit thrift store", "social media", "attract customers"], "jack": ["attract customers", "catering services", "local events"], "jets": ["marketing strategies", "student and family attendance", "themed hockey game"], "sauk": ["adults ages 18–24", "choosing a bank", "financial institution"], "streamline": ["families", "choosing and continuing", "swim lesson program"]};
+  let selectedConcepts=new Set();
+  function renderIdentify(){
+   const terms=keyConcepts[config.id];const question=config.question;
+   const spots=terms.map((term,i)=>({i,start:question.toLocaleLowerCase().indexOf(term.toLocaleLowerCase()),term})).sort((a,b)=>a.start-b.start);
+   const target=$('identifyQuestion');target.replaceChildren();let pos=0;
+   for(const part of spots){
+    if(part.start<0)continue;
+    target.append(document.createTextNode(question.slice(pos,part.start)));
+    const b=document.createElement('button');b.type='button';b.className='concept'+(selectedConcepts.has(part.i)?' picked':'');
+    b.textContent=question.slice(part.start,part.start+part.term.length);b.setAttribute('aria-pressed',String(selectedConcepts.has(part.i)));
+    b.setAttribute('aria-label','Select key concept: '+part.term);
+    b.onclick=()=>{const wasSelected=selectedConcepts.has(part.i);if(wasSelected)selectedConcepts.delete(part.i);else selectedConcepts.add(part.i);renderIdentify();if(!wasSelected){const card=document.querySelector('[data-idea-bank="'+part.i+'"]');if(card){if(window.matchMedia('(max-width:800px)').matches)card.scrollIntoView({behavior:'smooth',block:'center'});else{card.classList.add('spotlight');setTimeout(()=>card.classList.remove('spotlight'),1100)}}}};
+    target.append(b);pos=part.start+part.term.length;
+   }
+   target.append(document.createTextNode(question.slice(pos)));
+   const preview=$('ideaBanks');preview.replaceChildren();
+   terms.forEach((term,i)=>{const open=selectedConcepts.has(i);const card=document.createElement('div');card.className='ideaBank'+(open?' open':'');card.dataset.ideaBank=i;const icon=document.createElement('div');icon.className='bankIcon';icon.textContent=open?'🔓':'🔒';const heading=document.createElement('div');heading.className='bankHead';heading.textContent=open?term:'Word bank '+(i+1);card.append(icon,heading);if(open){const words=document.createElement('div');words.className='bankTerms';(config.groups[i]?.[2]||[]).slice(0,5).forEach(w=>{const chip=document.createElement('span');chip.textContent=w;words.append(chip)});card.append(words)}else{const hint=document.createElement('div');hint.className='lockedMessage';hint.textContent='Find its key idea above';card.append(hint)}preview.append(card)});
+   $('conceptProgress').textContent=selectedConcepts.size+' of '+terms.length+' key ideas found';
+   $('unlockSearch').disabled=selectedConcepts.size!==terms.length;
+   $('identifyNote').textContent=selectedConcepts.size===terms.length?'🎉 All three banks are open! Continue to build your search.':'Selected ideas unlock their matching word banks. Tap again to deselect.';
+   $('pool').replaceChildren();$('count').textContent='🔒 Search results unlock next';
+   $('note').textContent='First, identify the important ideas in your research question. Then you can experiment with search words.';
+  }
+  
+  function renderQuestionConnections(){
+   const question=config.question,terms=keyConcepts[config.id];const target=$('question');
+   target.replaceChildren();const spots=terms.map((term,i)=>({i,start:question.toLocaleLowerCase().indexOf(term.toLocaleLowerCase()),term})).filter(x=>x.start>=0).sort((a,b)=>a.start-b.start);
+   let pos=0;
+   for(const part of spots){target.append(document.createTextNode(question.slice(pos,part.start)));const mark=document.createElement('span');mark.className='questionConcept';mark.dataset.concept=part.i;mark.textContent=question.slice(part.start,part.start+part.term.length);target.append(mark);pos=part.start+part.term.length;}
+   target.append(document.createTextNode(question.slice(pos)));
+   const bridge=$('bankBridge');bridge.classList.add('bankBridgeVisual');bridge.textContent='The highlighted phrases above match the word banks below. Grow each idea with related words.';
+  }
+  function renderRealKeywordBanks(){
+   const grid=$('realKeywordBanks');grid.replaceChildren();
+   const concepts=keyConcepts[config.id];
+   config.groups.forEach((group,i)=>{
+    const card=document.createElement('div');card.className='realKeywordCard';
+    const title=document.createElement('h4');title.textContent=group[0]+' '+concepts[i];card.append(title);
+    const words=document.createElement('div');words.className='realKeywordWords';
+    group[2].forEach(term=>{const word=document.createElement('span');word.textContent=term;words.append(word)});
+    card.append(words);grid.append(card);
+   });
+   const phrases=$('realKeywordPhrases');phrases.replaceChildren();
+   config.phrases.forEach(term=>{const word=document.createElement('span');word.textContent='“'+term+'”';phrases.append(word)});
+  }
+  function renderSources(){$('scenarioCounter').textContent='Question '+(sourceIndex+1)+' of '+config.sources.length;$('sourcePrompt').textContent=config.sources[sourceIndex][0];$('sourceOptions').replaceChildren();[['web','🌐 Google / Web'],['library','📚 Library databases'],['both','🔎 Both']].forEach(([id,label])=>{const b=document.createElement('button');b.className='choice';b.textContent=label;b.onclick=()=>{sourceChoice=id;document.querySelectorAll('#sourceOptions .choice').forEach(x=>x.classList.remove('chosen'));b.classList.add('chosen');const [q,answer,why]=config.sources[sourceIndex];$('sourceFeedback').hidden=false;$('sourceFeedback').innerHTML='<strong>'+(id===answer?'Great starting point!':'Consider this approach:')+'</strong><div>'+why+'</div>';$('nextSource').hidden=false;$('nextSource').textContent=sourceIndex===config.sources.length-1?'Finish →':'Next question →'};$('sourceOptions').append(b)});$('sourceFeedback').hidden=true;$('nextSource').hidden=true;$('note').textContent='The open web is useful for current, local, or organization-specific facts. Library databases can help with published research and broader patterns. Sometimes you need both.'}
+  configs.forEach(c=>{const b=document.createElement('button');b.className='business';b.innerHTML='<span class="emoji">'+c.icon+'</span><strong>'+c.name+'</strong><small>'+c.topic+' →</small>';b.onclick=()=>openBusiness(c.id);$('businesses').append(b)});$('homeButton').onclick=home;$('unlockSearch').onclick=()=>{tokens=[];showStage('build')};$('backToIdeas').onclick=()=>showStage('identify');$('reset').onclick=()=>{tokens=[];lastCompletedPoolCount=null;renderBuild()};$('toRescue').onclick=()=>showStage('rescue');$('poolNext').onclick=()=>showStage('rescue');$('rescueBack').onclick=()=>showStage('build');$('nextRescue').onclick=()=>{rescueIndex++;renderRescue()};$('toSources').onclick=()=>showStage('tryReal');$('tryRealBack').onclick=()=>showStage('rescue');$('sourcesBack').onclick=()=>showStage('tryReal');$('nextSource').onclick=()=>{if(sourceIndex<config.sources.length-1){sourceIndex++;renderSources()}else showStage('finish')};$('restart').onclick=()=>openBusiness(config.id);const fromHash=location.hash.slice(1);if(configs.some(c=>c.id===fromHash))openBusiness(fromHash);
+  </script></body></html>
+  
